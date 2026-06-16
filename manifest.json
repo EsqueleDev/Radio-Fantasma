@@ -1,0 +1,15 @@
+{
+  "name": "Radio Fantasma",
+  "short_name": "Radio Fantasma",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#200027",
+  "theme_color": "#200027",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "Logo-fantasma.png",
+      "type": "image/png", "sizes": "48x48"
+    }
+  ]
+}
