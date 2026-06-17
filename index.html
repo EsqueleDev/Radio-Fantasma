@@ -16,7 +16,7 @@
     <div class="container-page">
         <center>
             <i><h3>Tocando agora:</h3></i><br>
-            <img src="SemPrograma.png" onclick="openShowInfo('none')" id="logo-programa" class="logo-programa">
+            <img src="SemPrograma.png" id="logo-programa" class="logo-programa">
             <br><br>
             <h1 id="songName" style="max-width: 90%;">[Nome da musica]</h1><br>
             <div id="tags" class="tags"></div><br>
@@ -64,17 +64,6 @@
     function checkForAProgramChange(){
         const now = new Date();
         switch(now.getDay()){
-            case 2:
-                if (now.getHours() >= 22 || now.getHours() < 6){
-                    nomeDoPrograma = "Viva o Brasil (Explicito)";
-                    logoProgramaImagem = "Viva_Brasil_Explicito.png";
-                }
-                else{
-                    nomeDoPrograma = "Viva o Brasil.";
-                    logoProgramaImagem = "Viva_Brasil.png";
-                }
-                break;
-            
             case 3:
                 if (now.getHours() >= 22 || now.getHours() < 6){
                     nomeDoPrograma = "Viva o Brasil (Explicito)";
@@ -85,13 +74,14 @@
                     logoProgramaImagem = "Viva_Brasil.png";
                 }
                 break;
+            default:
+                nomeDoPrograma = "Improviso";
+                logoProgramaImagem = "SemPrograma.png";
         }
         
         document.getElementById("logo-programa").src = logoProgramaImagem;
 
-        document.getElementById("logo-programa").onclick = function() {
-            openShowInfo(nomeDoPrograma);
-        };
+        document.getElementById("logo-programa").onclick = () => openShowInfo(nomeDoPrograma);
     }
 
     async function getSongInfo() {
@@ -216,7 +206,7 @@
                 document.getElementById("imagem-info").src = "SemPrograma.png";
                 break;
 
-            case 'Viva o Brasil':
+            case 'Viva o Brasil.':
                 document.getElementById("titulo-informacao").innerHTML = "Viva o Brasil";
                 document.getElementById("texto-informacao").innerHTML = "Tome a sua quarta-feira para aproveitar o mais belo que o nosso pais tem, a musica, vulgo o rock brasileiro, porque de resto...";
                 document.getElementById("imagem-info").src = "Viva_Brasil.png";
