@@ -1,0 +1,90 @@
+[
+    {
+        "programaDiario": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "06:00",
+            "horarioFim": "22:00"
+        },
+        "programaNoturno": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "22:00",
+            "horarioFim": "06:00"
+        }
+    },
+    {
+        "programaDiario": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "06:00",
+            "horarioFim": "22:00"
+        },
+        "programaNoturno": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "22:00",
+            "horarioFim": "06:00"
+        }
+    },
+    {
+        "programaDiario": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "06:00",
+            "horarioFim": "22:00"
+        },
+        "programaNoturno": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "22:00",
+            "horarioFim": "06:00"
+        }
+    },
+    {
+        "programaDiario": {
+            "nomePrograma": "Viva Brasil",
+            "horarioComeco": "06:00",
+            "horarioFim": "22:00",
+            "descricao": "Programa dedicado ao rock brasileiro."
+        },
+        "programaNoturno": {
+            "nomePrograma": "Viva Brasil (Explicito)",
+            "horarioComeco": "22:00",
+            "horarioFim": "06:00 da quinta-feira",
+            "descricao": "Programa dedicado ao rock brasileiro. <i>Uso de fones recomendado</i>"
+        }
+    },
+    {
+        "programaDiario": {
+            "nomePrograma": "Pop Disco",
+            "horarioComeco": "06:00",
+            "horarioFim": "22:00",
+            "descricao": "Apenas as musicas pop que com certeza não são mais pop a anos"
+        },
+        "programaNoturno": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "22:00",
+            "horarioFim": "06:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
+        }
+    },
+    {
+        "programaDiario": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "06:00",
+            "horarioFim": "22:00"
+        },
+        "programaNoturno": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "22:00",
+            "horarioFim": "06:00"
+        }
+    },
+    {
+        "programaDiario": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "06:00",
+            "horarioFim": "22:00"
+        },
+        "programaNoturno": {
+            "nomePrograma": "Nenhum",
+            "horarioComeco": "22:00",
+            "horarioFim": "06:00"
+        }
+    }
+]

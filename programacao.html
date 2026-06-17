@@ -3,11 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de programas para hoje</title>
     <link rel="stylesheet" href="estilos.css">
     <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-    
+    <div class="container-diferenciado">
+        <h1>Hoje:</h1>
+        <br><hr>
+        <br>
+        <div class="mini-box" id="programa-1">
+            
+        </div>
+        <br>
+        <div class="mini-box" id="programa-2">
+            
+        </div>
+        <br>
+        <h1>Amanha:</h1>
+        <br><hr>
+        <br>
+        <div class="mini-box" id="programa-3">
+            
+        </div>
+        <br>
+        <div class="mini-box" id="programa-4">
+            
+        </div>
+        <br>
+        <button onclick="window.history.back()">Voltar</button>
+    </div>
+
+    <script>
+        async function checkTheTodayProgram(today){
+            try {
+                const response = await fetch('./programacao.json');
+
+                if(!response.ok) throw new Error("caralho tu fudeu o bagulho que ta na mesma pasta");
+
+                const data = await response.json();
+
+                const today_program = data[today];
+                
+                changeProgramsToday(today_program);
+
+                const tommorrow_program = data[today+1];
+                
+                changeProgramsTommorow(tommorrow_program);
+            } catch (err){
+                console.error(err);
+            }
+        }
+
+        function changeProgramsToday(programation){
+            document.getElementById("programa-1").innerHTML = `
+                <h2>${programation.programaDiario.nomePrograma}</h2>
+                <br><hr><br>
+                <h3>${programation.programaDiario.descricao}</h3><br>
+                <h4><i>Começa as: ${programation.programaDiario.horarioComeco}. Termina as: ${programation.programaDiario.horarioFim}</i></h4>
+            `;
+
+            document.getElementById("programa-2").innerHTML = `
+                <h2>${programation.programaNoturno.nomePrograma}</h2>
+                <br><hr><br>
+                <h3>${programation.programaNoturno.descricao}</h3><br>
+                <h4><i>Começa as: ${programation.programaNoturno.horarioComeco}. Termina as: ${programation.programaNoturno.horarioFim}</i></h4>
+            `;
+        }
+
+        function changeProgramsTommorow(programation){
+            document.getElementById("programa-3").innerHTML = `
+                <h2>${programation.programaDiario.nomePrograma}</h2>
+                <br><hr><br>
+                <h3>${programation.programaDiario.descricao}</h3><br>
+                <h4><i>Começa as: ${programation.programaDiario.horarioComeco}. Termina as: ${programation.programaDiario.horarioFim}</i></h4>
+            `;
+
+            document.getElementById("programa-4").innerHTML = `
+                <h2>${programation.programaNoturno.nomePrograma}</h2>
+                <br><hr><br>
+                <h3>${programation.programaNoturno.descricao}</h3><br>
+                <h4><i>Começa as: ${programation.programaNoturno.horarioComeco}. Termina as: ${programation.programaNoturno.horarioFim}</i></h4>
+            `;
+        }
+
+        const today = new Date();
+
+        checkTheTodayProgram(today.getDay());
+    </script>
 </body>
 </html>
