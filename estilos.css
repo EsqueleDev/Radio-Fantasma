@@ -110,3 +110,13 @@ button{
         height: 90%;
     }
 }
+
+.container-diferenciado{
+    padding: 32px;
+}
+
+.mini-box{
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px white solid;
+}
