@@ -96,7 +96,7 @@
 
     async function getSongInfo() {
         try {
-            const response = await fetch("https://debian.tailf176e0.ts.net//api/nowplaying");
+            const response = await fetch("https://debian.tailf176e0.ts.net/api/nowplaying");
             const result = await response.json();
 
             const song = result[0].now_playing.song;
