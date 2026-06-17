@@ -16,7 +16,7 @@
     <div class="container-page">
         <center>
             <i><h3>Tocando agora:</h3></i><br>
-            <img src="SemPrograma.png" onclick="openShowInfo('none')" class="logo-programa">
+            <img src="SemPrograma.png" onclick="openShowInfo('none')" id="logo-programa" class="logo-programa">
             <br><br>
             <h1 id="songName" style="max-width: 90%;">[Nome da musica]</h1><br>
             <div id="tags" class="tags"></div><br>
@@ -48,8 +48,51 @@
     <script>
     let currentSongId = null;
     let nomeDoPrograma = "Improviso";
+    let logoProgramaImagem = "SemPrograma.png";
 
     navigator.mediaSession.setActionHandler('play', () => player.play());
+
+    if ('serviceWorker' in navigator && 'connection' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js').then(reg => {
+            const tipoConexao = navigator.connection.type || navigator.connection.effectiveType;
+            if (reg.active) {
+            reg.active.postMessage({ tipoConexao });
+            }
+        });
+    }
+
+    function checkForAProgramChange(){
+        const now = new Date();
+        switch(now.getDay()){
+            case 2:
+                if (now.getHours() >= 22 || now.getHours() < 6){
+                    nomeDoPrograma = "Viva o Brasil (Explicito)";
+                    logoProgramaImagem = "Viva_Brasil_Explicito.png";
+                }
+                else{
+                    nomeDoPrograma = "Viva o Brasil.";
+                    logoProgramaImagem = "Viva_Brasil.png";
+                }
+                break;
+            
+            case 3:
+                if (now.getHours() >= 22 || now.getHours() < 6){
+                    nomeDoPrograma = "Viva o Brasil (Explicito)";
+                    logoProgramaImagem = "Viva_Brasil_Explicito.png";
+                }
+                else{
+                    nomeDoPrograma = "Viva o Brasil.";
+                    logoProgramaImagem = "Viva_Brasil.png";
+                }
+                break;
+        }
+        
+        document.getElementById("logo-programa").src = logoProgramaImagem;
+
+        document.getElementById("logo-programa").onclick = function() {
+            openShowInfo(nomeDoPrograma);
+        };
+    }
 
     async function getSongInfo() {
         try {
@@ -167,18 +210,32 @@
     function openShowInfo(showName){
         document.getElementById("information").style.display = "block";
         switch(showName){
-            case 'none':
+            case 'Improviso':
                 document.getElementById("titulo-informacao").innerHTML = "Nenhum Programa";
                 document.getElementById("texto-informacao").innerHTML = "Não tem nenhum programa passando agora, curta as musicas da vasta biblioteca de nossa radio.";
                 document.getElementById("imagem-info").src = "SemPrograma.png";
+                break;
+
+            case 'Viva o Brasil':
+                document.getElementById("titulo-informacao").innerHTML = "Viva o Brasil";
+                document.getElementById("texto-informacao").innerHTML = "Tome a sua quarta-feira para aproveitar o mais belo que o nosso pais tem, a musica, vulgo o rock brasileiro, porque de resto...";
+                document.getElementById("imagem-info").src = "Viva_Brasil.png";
+                break;
+
+            case 'Viva o Brasil (Explicito)':
+                document.getElementById("titulo-informacao").innerHTML = "Viva o Brasil (Explicito)";
+                document.getElementById("texto-informacao").innerHTML = "Tome a sua quarta-feira para aproveitar o mais belo que o nosso pais tem, a musica, vulgo o rock brasileiro, porque de resto... <i>Este programa pode conter musicas com letras obcenas e de baixo calão, ouçar por sua conta, fones de ouvido indicados, se persistir os sintomas o medico deva ser consultado.</i>";
+                document.getElementById("imagem-info").src = "Viva_Brasil_Explicito.png";
                 break;
         }
     }
 
     tryStartTheFuckingPlayer();
+    checkForAProgramChange();
 
     getSongInfo();
     setInterval(getSongInfo, 6000);
+    setInterval(checkForAProgramChange, 60000);
     </script>
 </body>
 </html>
