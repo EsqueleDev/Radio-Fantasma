@@ -6,7 +6,7 @@
     <title>Fantasma esta no AR</title>
     <link rel="stylesheet" href="estilos.css">
     <link rel="manifest" href="manifest.json" />
-]    <!-- ios support -->
+    <!-- ios support -->
     <link rel="apple-touch-icon" href="Logo-fantasma.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#200027" />
     <meta name="theme-color" content="#200027" />
@@ -16,7 +16,10 @@
     <div class="container-page">
         <center>
             <i><h3>Tocando agora:</h3></i><br>
-            <img src="SemPrograma.png" id="logo-programa" class="logo-programa">
+            <div class="bolha">
+                <img src="SemPrograma.png" id="logo-programa" class="logo-programa">
+                <div class="brilho"></div>
+            </div>
             <br><br>
             <h1 id="songName" style="max-width: 90%;">[Nome da musica]</h1><br>
             <div id="tags" class="tags"></div><br>
@@ -42,10 +45,20 @@
         </div>
     </div>
     <div class="bottom">
-        <button id="installBtn" style="display:none">
+        <button id="installBtn" style="display:none" onclick="document.getElementById('menu-options).style.display = 'block';">
             Instalar Rádio Fantasma
         </button>
-        <button>Mandar uma mensagem.</button>
+        <button onclick="openOptionsMenu()">Extras</button>
+    </div>
+
+    <div class="menu-options" id="menu-options" onclick="document.getElementById('menu-options').style.display = 'none'">
+        <div class="menu-container" onclick="event.stopPropagation();">  
+            <h2>Extras:</h2><br>
+            <button>Ver a programação.</button><br><br>
+            <button>Mandar uma mensagem.</button><br><br>
+            <button>Sala de bate papo.</button><br><br>
+            <button>Configurações.</button>
+        </div>
     </div>
     <script>
     let currentSongId = null;
@@ -160,7 +173,7 @@
             console.log(err);
 
             warning.style.display = "block";
-            warning.innerHTML = "<i style='color: #a6ff7e;'>Clique aqui para começar a ouvir...</i>";
+            warning.innerHTML = "<i style='color: var(--warning);'>Clique aqui para começar a ouvir...</i>";
 
             document.body.addEventListener(
                 "click",
@@ -242,6 +255,10 @@
                 document.getElementById("imagem-info").src = "Viva_Brasil_Explicito.png";
                 break;
         }
+    }
+    
+    function openOptionsMenu(){
+        document.getElementById("menu-options").style.display = "block";
     }
 
     tryStartTheFuckingPlayer();

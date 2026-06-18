@@ -1,0 +1,329 @@
+:root{
+    --warning: #b67eff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url(dhjw7gl-e7bc4397-9346-4cc3-bac3-bdc5ef0aa710.png);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-page{
+    width: fit-content;
+    margin: auto;
+}
+
+.bottom-player{
+    position: fixed;
+    left: 1vw;
+    bottom: 0;
+    width: 98vw;
+    height: 64px;
+    border: 1px white solid;
+}
+
+.brilho {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 35%;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    filter: blur(8px);
+}
+
+.reflexo {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 15%;
+    height: 15%;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+}
+
+.bolha {
+    width: 320px;
+    border-radius: 25px;
+    height: 240px;
+    background: linear-gradient(
+        to bottom,
+        #6fd0ff,
+        #0066ff
+    );
+
+    position: relative;
+
+    box-shadow:
+        inset 0 5px 15px rgba(255,255,255,.6),
+        inset 0 -10px 20px rgba(0,0,0,.25),
+        0 10px 25px rgba(0,0,0,.35);
+}
+
+.brilho{
+    position:absolute;
+    top:10px;
+    left:20px;
+    width:160px;
+    height:70px;
+    border-radius:50%;
+    background:rgba(255,255,255,.5);
+    filter:blur(10px);
+}
+
+.logo-programa{
+    border-radius: 25px;
+
+    background: linear-gradient(
+        to bottom,
+        #7fd6ff 0%,
+        #39a9ff 100%
+    );
+
+    box-shadow:
+        inset 0 4px 10px rgba(255,255,255,0.6),
+        inset 0 -8px 12px rgba(0,0,0,0.2);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.3);
+}
+
+.tags{
+    width: fit-content;
+    max-width: 95%;
+    display: flex;
+    gap: 12px;
+}
+
+.artist-tag{
+    position: relative;
+
+    padding: 10px 16px;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+    border-radius: 30px;
+
+    border: 1px solid #9f5aff;
+
+    background: linear-gradient(
+        to bottom,
+        #b89eff 0%,
+        #b14aff 45%,
+        #8a15ff 50%,
+        #8b00cc 100%
+    );
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.8),
+        inset 0 -2px 5px rgba(0,0,0,0.15),
+        0 5px 12px rgba(0,100,255,0.4);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.artist-tag::before{
+    position: absolute;
+
+    left: 5%;
+    top: 5%;
+
+    width: 90%;
+    height: 45%;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events: none;
+}
+
+.album-tag{
+    position: relative;
+
+    padding: 10px 16px;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+    border-radius: 30px;
+
+    border: 1px solid #ff5a6b;
+
+    background: linear-gradient(
+        to bottom,
+        #ff9e9e 0%,
+        #ff4a4a 45%,
+        #ff1515 50%,
+        #cc0000 100%
+    );
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.8),
+        inset 0 -2px 5px rgba(0,0,0,0.15),
+        0 5px 12px rgba(0,100,255,0.4);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.album-tag::before{
+    position: absolute;
+
+    left: 5%;
+    top: 5%;
+
+    width: 90%;
+    height: 45%;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events: none;
+}
+
+.bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    position: fixed;
+    bottom: 12px;
+    left: 5vw;
+    width: 90vw;
+}
+
+button{
+    position: relative;
+
+    padding: 10px 16px;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+    border-radius: 30px;
+
+    border: 1px solid #5aceff;
+
+    background: linear-gradient(
+        to bottom,
+        #9ee7ff 0%,
+        #4ac6ff 45%,
+        #158aff 50%,
+        #00a3cc 100%
+    );
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.8),
+        inset 0 -2px 5px rgba(0,0,0,0.15),
+        0 5px 12px rgba(0,100,255,0.4);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+button::before{
+    position: absolute;
+
+    left: 5%;
+    top: 5%;
+
+    width: 90%;
+    height: 45%;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events: none;
+}
+
+.information{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0,0,0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    animation-name: openPopUp;
+    animation-duration: 0.2s;
+}
+
+.information-container{
+    position: fixed;
+    bottom: 0px;
+    overflow-y: scroll;
+    margin: auto;
+    padding: 12px;
+    width: 95%;
+    max-width: 95%;
+    height: 75%;
+    max-height: 100%;
+    background-color: #200027;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.information-header{
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+@keyframes openPopUp {
+    from{
+        width: 100%;
+        height: 0%;
+    }
+    
+    to{
+        width: 100%;
+        height: 90%;
+    }
+}
+
+.container-diferenciado{
+    padding: 32px;
+}
+
+.mini-box{
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px white solid;
+}
