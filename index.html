@@ -54,6 +54,16 @@
 
     let installPrompt;
 
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(() => {
+                console.log("Service Worker registrado");
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }
+    
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
 
@@ -74,14 +84,6 @@
 
     navigator.mediaSession.setActionHandler('play', () => player.play());
 
-    if ('serviceWorker' in navigator && 'connection' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js').then(reg => {
-            const tipoConexao = navigator.connection.type || navigator.connection.effectiveType;
-            if (reg.active) {
-            reg.active.postMessage({ tipoConexao });
-            }
-        });
-    }
 
     function checkForAProgramChange(){
         const now = new Date();
