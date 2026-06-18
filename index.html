@@ -42,13 +42,35 @@
         </div>
     </div>
     <div class="bottom">
-        <a href='programacao.html'><button>Ver a Programação.</button></a>
+        <button id="installBtn" style="display:none">
+            Instalar Rádio Fantasma
+        </button>
         <button>Mandar uma mensagem.</button>
     </div>
     <script>
     let currentSongId = null;
     let nomeDoPrograma = "Improviso";
     let logoProgramaImagem = "SemPrograma.png";
+
+    let installPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+
+        installPrompt = e;
+
+        document.getElementById("installBtn").style.display = "block";
+    });
+
+    document.getElementById("installBtn").addEventListener("click", async () => {
+        installPrompt.prompt();
+
+        const result = await installPrompt.userChoice;
+
+        console.log(result.outcome);
+
+        installPrompt = null;
+    });
 
     navigator.mediaSession.setActionHandler('play', () => player.play());
 
