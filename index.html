@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasma esta no AR</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" id="stylesheet" href="estilos.css">
     <link rel="manifest" href="manifest.json" />
     <!-- ios support -->
     <link rel="apple-touch-icon" href="Logo-fantasma.png" />
@@ -31,9 +31,9 @@
             <h2>Proxima Musica: <p id="proxima-musica"></p></h2>
         </center>
         
-        <div id="information" class="information">
+        <div id="information" class="information" onclick="document.getElementById('information').style.display = 'none'">
             <br>
-            <div class="information-container">
+            <div class="information-container" onclick="event.stopPropagation();">
                 <span class="information-header"><h1 id="titulo-informacao">[Titulo da informação]</h1><svg onclick="document.getElementById('information').style.display = 'none'" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF"><path d="m251.33-204.67-46.66-46.66L433.33-480 204.67-708.67l46.66-46.66L480-526.67l228.67-228.66 46.66 46.66L526.67-480l228.66 228.67-46.66 46.66L480-433.33 251.33-204.67Z"/></svg></span><br>
                 <hr>
                 <center>
@@ -57,7 +57,19 @@
             <button>Ver a programação.</button><br><br>
             <button>Mandar uma mensagem.</button><br><br>
             <button>Sala de bate papo.</button><br><br>
-            <button>Configurações.</button>
+            <button onclick="openSettingsMenu()">Configurações e temas.</button>
+        </div>
+    </div>
+
+    <div class="menu-options" id="menu-settings" onclick="document.getElementById('menu-settings').style.display = 'none'">
+        <div class="menu-container" onclick="event.stopPropagation();">  
+            <h2>Configurações:</h2><br>
+
+            <h3>Escolher o tema:</h3><br>
+            <select id="theme-selector" onchange="changeTheme()">
+                <option value="0">Tema classico.</option>
+                <option value="1">Frutiger Aero.</option>
+            </select>
         </div>
     </div>
     <script>
@@ -261,8 +273,54 @@
         document.getElementById("menu-options").style.display = "block";
     }
 
+    function openSettingsMenu(){
+        document.getElementById("menu-options").style.display = "none";
+        document.getElementById("menu-settings").style.display = "block";
+    }
+
+    function changeTheme(){
+        const themeSelector = document.getElementById("theme-selector");
+        localStorage.setItem("theme", themeSelector.value);
+        
+        let styleSheetURL = 'estilos.css';
+        
+        switch (themeSelector.value){
+            case "0":
+                styleSheetURL = 'estilos.css';
+                break;
+
+            case "1":
+                styleSheetURL = 'estilos _frutiger_aero.css';
+                break;
+        }
+
+        document.getElementById("stylesheet").href = styleSheetURL;
+
+        console.log(themeSelector.value);
+    }
+
     tryStartTheFuckingPlayer();
     checkForAProgramChange();
+
+    function getThemeSaved(){
+        let styleSheetURL = 'estilos.css';
+        
+        switch (localStorage.getItem("theme")){
+            case "0":
+                styleSheetURL = 'estilos.css';
+                break;
+
+            case "1":
+                styleSheetURL = 'estilos _frutiger_aero.css';
+                break;
+        }
+
+        document.getElementById("theme-selector").value = localStorage.getItem("theme");
+
+        document.getElementById("stylesheet").href = styleSheetURL;
+    }
+
+    getThemeSaved();
 
     getSongInfo();
     setInterval(getSongInfo, 6000);

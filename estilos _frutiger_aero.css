@@ -233,14 +233,14 @@ button{
 
     border-radius: 30px;
 
-    border: 1px solid #5aceff;
+    border: 1px solid #ba5aff;
 
     background: linear-gradient(
         to bottom,
-        #9ee7ff 0%,
-        #4ac6ff 45%,
-        #158aff 50%,
-        #00a3cc 100%
+        #c09eff 0%,
+        #924aff 45%,
+        #8615ff 50%,
+        #5c00cc 100%
     );
 
     box-shadow:
@@ -299,6 +299,31 @@ button::before{
     background-color: #200027;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    color: black;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+    border-radius: 30px;
+
+    border: 1px solid #5ac0ff;
+
+    background: linear-gradient(
+        to bottom,
+        #9eefff 0%,
+        #4af9ff 45%,
+        #15ffef 50%,
+        #00b8cc 100%
+    );
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.8),
+        inset 0 -2px 5px rgba(0,0,0,0.15),
+        0 5px 12px rgba(0,100,255,0.4);
 }
 
 .information-header{
@@ -326,4 +351,91 @@ button::before{
     padding: 12px;
     border-radius: 25px;
     border: 1px white solid;
+}
+
+.menu-options{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.menu-container{
+    margin: 24px;
+    background-color: #200027;
+    padding: 24px;
+    border-radius: 25px;
+
+    padding: 10px 16px;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    color: rgb(89, 89, 89);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+    border-radius: 30px;
+
+    border: 1px solid #5aff76;
+
+    background: linear-gradient(
+        to bottom,
+        #adff9e 0%,
+        #5fff4a 45%,
+        #15ff38 50%,
+        #1fcc00 100%
+    );
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.8),
+        inset 0 -2px 5px rgba(0,0,0,0.15),
+        0 5px 12px rgba(0,100,255,0.4);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+select{
+    font-size: 16px;
+    font-weight: 800;
+    width: 100%;
+    padding: 12px;
+    border: 1px white solid;
+    border-radius: 12px;
+    border-radius: 25px;
+
+    padding: 10px 16px;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+    border-radius: 30px;
+
+    border: 1px solid #ba5aff;
+
+    background: linear-gradient(
+        to bottom,
+        #c09eff 0%,
+        #924aff 45%,
+        #8615ff 50%,
+        #5c00cc 100%
+    );
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.8),
+        inset 0 -2px 5px rgba(0,0,0,0.15),
+        0 5px 12px rgba(0,100,255,0.4);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
 }
