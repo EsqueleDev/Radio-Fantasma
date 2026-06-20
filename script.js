@@ -257,8 +257,14 @@ async function checkTheTodayProgram(today){
         
         changeProgramsToday(today_program);
 
-        const tommorrow_program = data[today+1];
-        
+        let tommorrow_program;
+
+        if(today == 6){
+            tommorrow_program = data[0];
+        }
+        else{
+            tommorrow_program = data[today+1];
+        }
         changeProgramsTommorow(tommorrow_program);
     } catch (err){
         console.error(err);
