@@ -3,36 +3,42 @@
         "programaDiario": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "06:00",
-            "horarioFim": "22:00"
+            "horarioFim": "22:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         },
         "programaNoturno": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "22:00",
-            "horarioFim": "06:00"
+            "horarioFim": "06:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         }
     },
     {
         "programaDiario": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "06:00",
-            "horarioFim": "22:00"
+            "horarioFim": "22:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         },
         "programaNoturno": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "22:00",
-            "horarioFim": "06:00"
+            "horarioFim": "06:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         }
     },
     {
         "programaDiario": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "06:00",
-            "horarioFim": "22:00"
+            "horarioFim": "22:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         },
         "programaNoturno": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "22:00",
-            "horarioFim": "06:00"
+            "horarioFim": "06:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         }
     },
     {
@@ -67,24 +73,28 @@
         "programaDiario": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "06:00",
-            "horarioFim": "22:00"
+            "horarioFim": "22:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         },
         "programaNoturno": {
             "nomePrograma": "Nenhum",
             "horarioComeco": "22:00",
-            "horarioFim": "06:00"
+            "horarioFim": "06:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         }
     },
     {
         "programaDiario": {
-            "nomePrograma": "Nenhum",
-            "horarioComeco": "06:00",
-            "horarioFim": "22:00"
+            "nomePrograma": "Festa Junina",
+            "horarioComeco": "11:00",
+            "horarioFim": "17:00",
+            "descricao": "ARRAIA!!! Venha para a fito e participe do quiz especial da Radio Fantasma."
         },
         "programaNoturno": {
             "nomePrograma": "Nenhum",
-            "horarioComeco": "22:00",
-            "horarioFim": "06:00"
+            "horarioComeco": "17:00",
+            "horarioFim": "06:00",
+            "descricao": "Nenhum programa, apenas as musicas de nosso catalago"
         }
     }
 ]

@@ -92,7 +92,7 @@ button{
     bottom: 0px;
     overflow-y: scroll;
     margin: auto;
-    padding: 12px;
+    padding: 16px;
     width: 95%;
     max-width: 95%;
     height: 75%;
@@ -155,4 +155,10 @@ select{
     color: white;
     border: 1px white solid;
     border-radius: 12px;
+}
+
+textarea{
+    background-color: #200027;
+    border: 1px white solid;
+    border-radius: 25px;
 }
